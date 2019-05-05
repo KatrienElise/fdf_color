@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/03 16:57:09 by rsteigen       #+#    #+#                */
-/*   Updated: 2019/05/02 12:01:04 by rsteigen      ########   odam.nl         */
+/*   Updated: 2019/05/03 15:56:16 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,6 @@ int		fdf_get_w(char *line)
 
 	i = 0;
 	w = 0;
-/*	while (line[i] != '\0') dit mag weg, maar dan weet je wat ik veranderd heb
-	{
-		if (line[i] != ' ' && line[i - 1] == ' ')
-			w++;
-		i++;
-	}
-	//w--;
-*/
 	while (line[i] != '\0')
 	{
 		if (line[i] && line[i] != ' ')

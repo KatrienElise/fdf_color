@@ -6,15 +6,15 @@
 #    By: rsteigen <rsteigen@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/04/01 15:38:46 by rsteigen       #+#    #+#                 #
-#    Updated: 2019/05/02 13:30:30 by kblum         ########   odam.nl          #
+#    Updated: 2019/05/05 08:49:13 by kblum         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
 FLAGS = -Wall -Wextra -Werror
-FUNCS =	fdf.c print.c free.c error.c check.c setup.c events.c calc_setup.c\
+FUNCS =	fdf.c free.c error.c check.c setup.c events.c calc_setup.c\
 rot.c draw.c bresem.c actions.c funcs.c bresem02.c bresem37.c touch.c inside.c\
-setup_align.c calc_setup_dist_z.c fdf2.c iso.c
+setup_align.c calc_setup_dist_z.c fdf2.c iso.c color.c
 
 all: $(NAME)
 

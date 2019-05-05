@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/11 15:31:33 by rsteigen       #+#    #+#                */
-/*   Updated: 2019/05/03 16:52:08 by kblum         ########   odam.nl         */
+/*   Updated: 2019/05/05 13:46:25 by kblum         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	put_view_to_img(t_fdf *start)
 			b.ki = b.i - start->w;
 			start->x1 = start->tmp[b.ki][0];
 			start->y1 = start->tmp[b.ki][1];
-;			start->z1 = start->tmp[b.ki][2];
+			start->z1 = start->lock[b.ki][2];
 			to_put_or_not_to_put(start);
 		}
 		if (b.i % start->w < (start->w - 1))
@@ -56,7 +56,7 @@ void	put_view_to_img(t_fdf *start)
 			b.i++;
 			start->x1 = start->tmp[b.i][0];
 			start->y1 = start->tmp[b.i][1];
-			start->z1 = start->tmp[b.i][2];
+			start->z1 = start->lock[b.i][2];
 			b.i--;
 			to_put_or_not_to_put(start);
 		}
@@ -75,5 +75,14 @@ int		draw(t_fdf *start)
 	align_map(start);
 	put_view_to_img(start);
 	mlx_put_image_to_window(start->mlx, start->win, start->img, 0, 0);
+	mlx_string_put(start->mlx, start->win, 800, 10, 0xf4f1e6, "roos & katrien");
+	mlx_string_put(start->mlx, start->win, 100, 20, 0xf4f1e6, "color: 		1, 2, 3, 4");
+	mlx_string_put(start->mlx, start->win, 100, 35, 0xf4f1e6, "crazy: 		shift");
+	mlx_string_put(start->mlx, start->win, 100, 50, 0xf4f1e6, "turn x-as: 	x & c");
+	mlx_string_put(start->mlx, start->win, 100, 65, 0xf4f1e6, "turn y-as:	y & u");
+	mlx_string_put(start->mlx, start->win, 100, 80, 0xf4f1e6, "turn z-as:	z & a");
+	mlx_string_put(start->mlx, start->win, 100, 95, 0xf4f1e6, "dept:		+ & -");
+	mlx_string_put(start->mlx, start->win, 100, 110, 0xf4f1e6, "reset:		spatie");
+	mlx_string_put(start->mlx, start->win, 100, 125, 0xf4f1e6, "zoom:		scroll mouse");
 	return (0);
 }

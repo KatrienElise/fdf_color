@@ -6,13 +6,13 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/28 15:14:15 by rsteigen       #+#    #+#                */
-/*   Updated: 2019/05/02 17:19:47 by rsteigen      ########   odam.nl         */
+/*   Updated: 2019/05/03 15:58:33 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	align_map(t_fdf *start)
+void		align_map(t_fdf *start)
 {
 	int		add_x;
 	int		add_y;
@@ -34,7 +34,6 @@ void	align_map(t_fdf *start)
 		start->tmp[i][1] = start->tmp[i][1] + add_y;
 		i++;
 	}
-	start->view = 0;
 }
 
 void		check_align(t_fdf *start)

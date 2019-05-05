@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/10 15:53:09 by rsteigen       #+#    #+#                */
-/*   Updated: 2019/05/03 17:07:41 by kblum         ########   odam.nl         */
+/*   Updated: 2019/05/02 17:24:43 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,6 @@ void		rot_map(t_fdf *start)
 		start->tmp[i][0] = start->lock[i][0];
 		start->tmp[i][1] = start->lock[i][1];
 		start->tmp[i][2] = start->lock[i][2] * start->z_mod;
-		if (start->tmp[i][2] > start->max_z)
-			start->max_z = start->tmp[i][2];
-		if (start->tmp[i][2] < start->min_z)
-			start->min_z = start->tmp[i][2];
 		rot_x(start, i);
 		rot_y(start, i);
 		rot_z(start, i);

@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/24 13:54:53 by rsteigen       #+#    #+#                */
-/*   Updated: 2019/04/25 15:22:45 by kblum         ########   odam.nl         */
+/*   Updated: 2019/05/05 08:58:43 by kblum         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	put_oct3(t_fdf *start, t_bresem line)
 			line.y0++;
 			line.f = line.f + line.dxx;
 		}
+		line.color = dec_color(start, line);
 		put_pixel_to_img(start, line.x0, line.y0, line.color);
 	}
 }
@@ -40,6 +41,7 @@ void	put_oct4(t_fdf *start, t_bresem line)
 			line.y0--;
 			line.f = line.f + line.dxx;
 		}
+		line.color = dec_color(start, line);
 		put_pixel_to_img(start, line.x0, line.y0, line.color);
 	}
 }
@@ -56,6 +58,7 @@ void	put_oct5(t_fdf *start, t_bresem line)
 			line.x0--;
 			line.f = line.f + line.dyy;
 		}
+		line.color = dec_color(start, line);
 		put_pixel_to_img(start, line.x0, line.y0, line.color);
 	}
 }
@@ -72,6 +75,7 @@ void	put_oct6(t_fdf *start, t_bresem line)
 			line.x0++;
 			line.f = line.f + line.dyy;
 		}
+		line.color = dec_color(start, line);
 		put_pixel_to_img(start, line.x0, line.y0, line.color);
 	}
 }
@@ -88,6 +92,7 @@ void	put_oct7(t_fdf *start, t_bresem line)
 			line.y0--;
 			line.f = line.f + line.dxx;
 		}
+		line.color = dec_color(start, line);
 		put_pixel_to_img(start, line.x0, line.y0, line.color);
 	}
 }

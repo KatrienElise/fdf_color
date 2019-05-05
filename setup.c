@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/08 11:13:46 by rsteigen       #+#    #+#                */
-/*   Updated: 2019/05/01 16:08:11 by kblum         ########   odam.nl         */
+/*   Updated: 2019/05/03 15:30:54 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ void	set_zero(t_fdf *start)
 {
 	t_int	b;
 
-//	b.max_z = 0;
-//	b.min_z = 0;
 	b.i = 0;
 	dist_start(start);
 	while (b.i < (start->w * start->h))
@@ -58,14 +56,8 @@ void	set_zero(t_fdf *start)
 			set_zero3(start, b.i);
 		else
 			set_zero2(start, b.i);
-//		if (start->lock[b.i][2] > b.max_z)
-//			b.max_z = start->lock[b.i][2];
-//		if (start->lock[b.i][2] < b.min_z)
-//			b.min_z = start->lock[b.i][2];
 		b.i++;
 	}
-//	start->min_z = b.min_z;
-//	start->max_z = b.max_z;
 	if (start->z_click != 0)
 		start->z_click = 0;
 	start->zoom = 0;

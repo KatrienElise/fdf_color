@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/15 16:10:01 by rsteigen       #+#    #+#                */
-/*   Updated: 2019/05/01 17:32:37 by kblum         ########   odam.nl         */
+/*   Updated: 2019/05/03 15:50:40 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,3 @@ void	check_rot(t_fdf *start)
 	check_rot_y(start);
 	check_rot_z(start);
 }
-
