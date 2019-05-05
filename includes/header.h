@@ -6,7 +6,7 @@
 /*   By: kblum <kblum@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/27 12:23:27 by rsteigen       #+#    #+#                */
-/*   Updated: 2019/05/03 15:15:13 by kblum         ########   odam.nl         */
+/*   Updated: 2019/05/05 13:12:10 by kblum         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct		s_bresem
 	int				color;
 	int				x0;
 	int				y0;
-	int				tc;
+	int				percen;
 }					t_bresem;
 
 typedef struct		s_rot
@@ -107,10 +107,9 @@ typedef struct		s_fdf
 	int				crazy;
 	int				view;
 	double			z_mod;
+	int				dec;
 }					t_fdf;
 
-void				ft_print_map(double **map, int h, int w);
-void				ft_print_co(t_fdf *start);
 /* ************************************************************************** */
 /*          error.c                                                           */
 /* ************************************************************************** */
@@ -118,6 +117,14 @@ void				error_fd(int nb);
 void				error(int d, t_fdf *start);
 void				error_gnl(int nb, t_fdf *start, int y, char *line);
 void				error_draw(t_fdf *start, int d);
+/* ************************************************************************** */
+/*          color.c                                                           */
+/* ************************************************************************** */
+int					dec_first_color(t_fdf *start, t_bresem line);
+int					dec_color(t_fdf *start, t_bresem line);
+t_bresem			difference(t_fdf *start, t_bresem line);
+t_bresem			big_color_pos(int val, t_bresem line);
+t_bresem			mini_color(int val, t_bresem line);
 
 /* ************************************************************************** */
 /*          fdf.c                                                             */
@@ -139,7 +146,9 @@ void				fill_rest(t_fdf *start, t_int b, int y);
 /* ************************************************************************** */
 int					deal_key(int keycode, t_fdf *start);
 int					deal_key2(int keycode, t_fdf *start);
+int					deal_key3(int keycode, t_fdf *start);
 int					mouse_press(int button, int x, int y, t_fdf *start);
+void				events_reset(t_fdf *start);
 
 /* ************************************************************************** */
 /*          actions.c                                                         */
@@ -156,7 +165,7 @@ void				dist_start2(int dist, t_fdf *start);
 int					digit_count(char *s, int i);
 int					get_val(char *s, int i);
 void				make_reset(t_fdf *start);
-t_bresem			big_color_neg(t_bresem line);
+t_bresem			big_color_neg(int val, t_bresem line);
 
 /* ************************************************************************** */
 /*          setup.c                                                           */
@@ -226,9 +235,7 @@ void				rot_map(t_fdf *start);
 /* ************************************************************************** */
 void				put_line(t_fdf *start);
 void				draw_line(t_fdf *start, t_bresem line);
-t_bresem			mini_color(t_bresem line);
 void				decide_line(t_fdf *start, t_bresem line);
-t_bresem			big_color_pos(t_bresem line);
 
 /* ************************************************************************** */
 /*          bresem02.c                                                        */
@@ -265,6 +272,6 @@ int					inside_square(t_fdf *start);
 /* ************************************************************************** */
 /*          iso.c                                                          */
 /* ************************************************************************** */
-void				iso_loop(t_fdf *start);
 void 				iso(double *x, double *y, double z);
+
 #endif
